@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      List
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+  <ion-item>
+    <ion-label>ciudad</ion-label>
+    <ion-input type="text" [(ngModel)]="ciudad"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Sitio</ion-label>
+    <ion-input type="text" [(ngModel)]="sitio"></ion-input>
+  </ion-item>   
+  <ion-button (click)="onAgregarSitio()">
+   Agregar
+  
+  </ion-button>
+</div>
+<div>
+<div >
+    <ion-card *ngFor="let item of items;let i = index">
+        <ion-card-header>
+          <ion-card-subtitle>Ciudad: {{item.ciudad}}</ion-card-subtitle>
+          <ion-card-title>Sitio Turistico: {{item.sitio}}</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+         
+          <ion-img src="./assets/img/{{item.image}}.jpg"></ion-img>
+        </ion-card-content>
+      </ion-card>
+      
+  
+</div>
+
+</div>
+
+</ion-content>
